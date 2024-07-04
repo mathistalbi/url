@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyEfrei Url Shortener | Liste des raccourcis</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+</head>
+<body>
+    <header>
+        <div>
+            <a href="/"><img src="https://www.cfa-afia.com/app/uploads/2022/01/logo-efrei-print-efrei-web.png" alt="Logo Efrei"></a>
+            <nav>
+                <a href="/">Accueil</a>
+                <a href="/list">Liste des raccourcis</a>
+                <a href="/customize">Raccourci personnalisé</a>
+            </nav>
+        </div>
+    </header>
+    <div class="content">
+        <div id="container" class="list">
+            <h1>Liste des raccourcis</h1>
+            {{if gt .TotalLiens 0}}
+            <p>Total de raccourcis créés : {{.TotalLiens}}</p>
+            <div class="list-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>URL d'origine</th>
+                            <th>URL Raccourcie</th>
+                            <th>Nombre de visites</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {{range .URLs}}
+                    <tr>
+                        <td><a target="_blank" class="list-origin-url" href="{{.URLOrigine}}">{{.URLOrigine}}</a></td>
+                        <td><a target="_blank" class="list-shortened-url" href="/short/{{.URLCourte}}">{{.URLCourte}}</a></td>
+                        <td>{{.Compteur}}</td>
+                        <td>
+                            <form method="POST" action="/delete">
+                                <input type="hidden" name="short_key" value="{{.URLCourte}}">
+                                <input id="DeleteShort" type="submit" value="Supprimer">
+                            </form>
+                        </td>
+                    </tr>
+                    {{end}}
+                    </tbody>
+                </table>
+            </div>
+            {{else}}
+            <p>Aucun raccourci n'a été créé. Veuillez créer au moins un raccourci</p>
+            {{end}}
+            <div style="display:flex;justify-content:center">
+                <a class="style-btn" href="/">Retour à l'accueil</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

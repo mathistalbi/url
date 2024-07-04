@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyEfrei Url Shortener | Accueil</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+</head>
+<body>  
+    <header>
+        <div>
+            <a href="/"><a href="/"><img src="https://www.cfa-afia.com/app/uploads/2022/01/logo-efrei-print-efrei-web.png" alt="Logo Efrei"></a></a>
+            <nav>
+                <a href="/">Accueil</a>
+                <a href="/list">Liste des raccourcis</a>
+                <a href="/customize">Raccourci personnalisé</a>
+            </nav>
+        </div>
+    </header>
+    <div class="content">
+        <form id="container" style="text-align: center;" class="home" method="POST" action="/short-url">
+            <a href="/"><img src="https://www.cfa-afia.com/app/uploads/2022/01/logo-efrei-print-efrei-web.png"></a>
+            <h1>MyEfrei Url Shortener</h1>
+            <p>Un moyen simple et rapide de raccourcir vos URLs</p>
+            <div class="url-container">
+                <input id="urlInput" type="url" name="url" placeholder="Entrez votre URL" required>
+                <input id="shortBtn" type="submit" value="Raccourcir">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

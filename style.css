@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: #004080;
+    color: white;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+header div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header img {
+    max-height: 50px;
+    margin-right: 70px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+header nav a:hover {
+    background-color: #003060;
+}
+
+@media (max-width: 800px) {
+    header nav a {
+        font-size: 14px;
+    }
+    header {
+        padding: 20px 0;
+    }
+    header div {
+        gap: 10px;
+        width: unset;
+        flex-direction: column;
+    }
+    header img {
+        margin-right: 0;
+    }
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+
+.main {
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.url-container, .list-container {
+    margin-top: 30px;
+}
+
+.url-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#urlInput, #customInput {
+    font-size: 17px;
+    padding: 5px;
+    border: none;
+    width: 100%;
+    max-width: 330px;
+    background-color: transparent;
+    border-bottom: 1px solid;
+    outline: none;
+}
+
+#shortBtn, #DeleteShort {
+    font-size: 17px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3aa5e7;
+    width: 100px;
+    color: #fff;
+}
+
+#shortBtn {
+    margin-left: 10px;
+    padding: 5px 10px;
+    width: auto;
+}
+
+#shortBtn:hover, #DeleteShort:hover {
+    background-color: #085c91;
+}
+
+#container {
+    max-width: 900px;
+    width: 90%;
+    padding: 20px;
+}
+
+p, h1 {
+    text-align: center;
+}
+
+.content img {
+    max-width: 300px;
+    display: block;
+    margin: 0 auto 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.10), 0px 10px 20px rgba(0,0,0,0.05), 0px 20px 20px rgba(0,0,0,0.05), 0px 30px 20px rgba(0,0,0,0.05);
+}
+
+th, td {
+    border: 1px solid #999;
+    padding: 12px 16px;
+    text-align: center;
+    color: #3aa5e7;
+}
+
+.origin-url, .shortened-url {
+    max-width: 800px;
+    min-width: 480px;
+    display: inline-block;
+}
+
+.origin-url a, .shortened-url a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.copy-button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #3aa5e7;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.copy-button:hover {
+    background-color: #085c91;
+    color: #fff;
+}
+
+.short {
+    text-align: center;
+}
+
+a:link, a:visited {
+    color: #3aa5e7;
+}
+
+.text-to-copy {
+    max-width: 330px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    line-height: 1;
+    margin-bottom: -14px;
+    padding: 10px;
+}
+
+.url-list-container {
+    padding: 10px;
+}
+
+.style-btn {
+    margin: 20px 0 0 0;
+    padding: 5px 10px;
+    border: none;
+    background-color: #3aa5e7;
+    color: white !important;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex;
+}
+
+.style-btn:hover {
+    background-color: #085c91;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .main h1 {
+        font-size: 30px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .style-btn {
+        padding: 5px 8px;
+    }
+
+    .origin-url, .shortened-url {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .shortened-url-original-container, .shortened-url-result-container {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text-to-copy {
+        padding-left: 0;
+    }
+
+    .copy-button {
+        margin-left: 0;
+        width: 65px;
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main h1 {
+        font-size: 24px;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+
+    .style-btn {
+        padding: 4px 6px;
+    }
+}
+
+
+
+/* Short url */
+
+.shorted-url-result-container, .shorted-url-original-container{
+    margin-top: 25px;
+}
+
+.shortened-url-original-container {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.shortened-url-result-container {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .shorted-url-result-container, .shorted-url-original-container{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    .origin-url, .shortened-url{
+        min-width: unset;
+        text-align: left;
+    }
+}
+
+/* List */
+
+.list-origin-url, .list-shortened-url {
+    max-width: 250px;
+    width: 100%;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.list-container {
+    width: 100%;
+    overflow: auto;
+    max-height: 375px;
+}
+
+.list-container table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.10), 0px 10px 20px rgba(0,0,0,0.05), 0px 20px 20px rgba(0,0,0,0.05), 0px 30px 20px rgba(0,0,0,0.05);
+}
+
+.list-container th, .list-container td {
+    border: 1px solid #999;
+    padding: 12px 16px;
+    text-align: center;
+    color: #3aa5e7;
+    max-width: 300px;
+}
+
+/* Customize */
+
+.custom-url-container {
+    position: relative;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 60px;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyEfrei Url Shortener | Mon raccourci</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+</head>
+
+<script>
+    function copyText(button) {
+        var container = button.parentElement;
+        var textToCopy = container.querySelector(".text-to-copy").innerText;
+        var tempInput = document.createElement("input");
+        tempInput.value = textToCopy;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        alert("Texte copié : " + textToCopy);
+    }
+</script>
+<body>
+    <header>
+        <div>
+            <a href="/"><a href="/"><img src="https://www.cfa-afia.com/app/uploads/2022/01/logo-efrei-print-efrei-web.png" alt="Logo Efrei"></a></a>
+            <nav>
+                <a href="/">Accueil</a>
+                <a href="/list">Liste des raccourcis</a>
+                <a href="/customize">Raccourci personnalisé</a>
+            </nav>
+        </div>
+    </header>
+    <div class="content">
+        <div id="container" class="short">
+            <h1>Votre raccourci a été créé !</h1>
+            <p>Accedez a votre lien raccourci ci-dessous</p>
+
+            <div class="shorted-url-original-container">
+                <p class="origin-url">Lien d'origine : <a target="_blank" href="{{.URLOrigine}}"><span class="text-to-copy">{{.URLOrigine}}</span></a></p>
+                <button class="copy-button" onclick="copyText(this)">Copier</button>
+            </div>
+            <div class="shorted-url-result-container">
+                <p class="shortened-url">Lien raccourci : <a target="_blank" href="{{.URLRaccourcie}}"><span class="text-to-copy">{{.URLRaccourcie}}</span></a></p>    
+                <button class="copy-button" onclick="copyText(this)">Copier</button>
+            </div>
+            <a class="style-btn" href="/">Retour a l'accueil</a>
+        </div>
+    </div>
+</body>
+</html>
